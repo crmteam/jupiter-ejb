@@ -12,7 +12,6 @@ import org.jupiter.beans.profile.ProfileBeanLocal;
 import org.jupiter.entities.Acl;
 import org.jupiter.entities.Profile;
 
-
 /**
  * Session Bean implementation class ProfileService
  */
@@ -25,18 +24,16 @@ public class ProfileService {
 
 	public ProfileService() {
 	}
-	
+
 	@WebMethod(action = "add")
 	public void addProfile(@WebParam(name = "profilename") String userprofile,
 			@WebParam(name = "acl") List<Acl> acls) {
-	
-		
 
 		Profile profile = new Profile();
-		
+
 		profile.setUserProfile(userprofile);
 		profile.setAcls(acls);
-		
+
 		profileBean.addProfile(profile);
 	}
 
@@ -45,11 +42,10 @@ public class ProfileService {
 
 		if (null != profile) {
 
-			profileBean.deleteProfile(profile);;
+			profileBean.deleteProfile(profile);
 		}
 	}
-	
-	
+
 	@WebMethod(action = "all")
 	public List<Profile> findAllProfile() {
 		return profileBean.findAllProfile();
