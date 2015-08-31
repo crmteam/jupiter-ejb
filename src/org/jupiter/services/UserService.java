@@ -38,24 +38,21 @@ public class UserService {
 			@WebParam(name = "city") String city,
 			@WebParam(name = "zipcode") String zipcode,
 			@WebParam(name = "country") String country) {
-		
+
 		Address address = new Address();
 		address.setStreet(street);
 		address.setCity(city);
 		address.setContry(country);
 		address.setZipcode(zipcode);
-		
 
 		User user = new User();
-		
+
 		user.setFirstname(firstname);
 		user.setLastname(lastname);
 		user.setLogin(login);
 		user.setEmail(email);
 		user.setPhone(phone);
 		user.setAddress(address);
-		
-		
 
 		if (null != firstname || null != lastname) {
 
@@ -71,11 +68,10 @@ public class UserService {
 			userBean.deleteUser(user);
 		}
 	}
-	
-	
+
 	@WebMethod(action = "all")
 	public List<User> findAllUsers() {
 		return userBean.findAllUsers();
 	}
-	
+
 }

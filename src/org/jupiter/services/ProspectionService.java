@@ -96,9 +96,8 @@ public class ProspectionService {
 		return prospects;
 	}
 
-	
 	@WebMethod(action = "update")
-	public void  update(@WebParam(name = "id") int id) {
+	public void update(@WebParam(name = "id") int id) {
 		Prospection pros = prospectionBean.findProspection(id);
 		prospectionBean.updateProspection(pros);
 	}
